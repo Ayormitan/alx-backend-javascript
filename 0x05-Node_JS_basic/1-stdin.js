@@ -1,21 +1,24 @@
 const readline = require('readline');
 
-// Console for input and output
-const r1 = readline.createInterface({
+// Create an interface for input and output streams
+const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-// Display first prompt
+// Display the welcome message
 console.log('Welcome to Holberton School, what is your name?');
 
-// Capture user input
-r1.question('', (name) => {
-  console.log('Your name is: ${name}');
-  r1.close();
+// Handle user input
+rl.question('', (name) => {
+  // Output the user's name
+  console.log(`Your name is: ${name}`);
+
+  // Close the readline interface
+  rl.close();
 });
 
-// on close, display the exit message
-r1.on('close', () => {
+// Listen for the 'close' event to print the closing message
+rl.on('close', () => {
   console.log('This important software is now closing');
 });
