@@ -1,8 +1,6 @@
-function calculateNumber(type, a, b) {
+function calculateNumber(a, b) {
   a = Math.round(a);
   b = Math.round(b);
-
-
   switch (type) {
     case 'SUM':
       return a + b;
